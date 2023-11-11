@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 
+// rgb(250,51,53)
+
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$primary-color: rgb(255,255,255);
+$secondary-color:rgb(238, 238, 239);
+$accent-color:rgb(194,24,91);
+$primary-text-color:rgb(133, 133, 133);
+$main-text-size: 1.2rem;
+$text-size: 1.5rem;
+
+.header {
+    @apply bg-white;
+
+    &__sect1 {
+        @apply flex justify-between items-center
+        align-middle py-5 px-48;
+        
+    }
+    //it seems the div affects all the others divs downstream
+
+}
+
+
+.logo {
+    @apply h-10 items-center;
+    border: 3px solid white;
+    line-height: 18px;
+
+    .logo__image {
+        height: 100%;
+        background-color: rgb(249, 250, 251);
+        // using rgb value to set bg with tailwind didnt work
+    }
+    
+    h2 {
+        @apply text-black
+    }
+}
+
+
+.search {
+    @apply flex;
+
+    input {
+        @apply h-10 w-52 px-2;
+        outline: none;
+        border: 0.5px solid $accent-color;
+        border-radius: 2px;
+    }
+
+    &__logo {
+        background-color:  $accent-color;
+        padding: 7px;
+        border: 1px solid $accent-color;
+    }
+}
+
+
+.cartusersign {
+    @apply flex gap-5 h-12 items-center;
+
+    &__sect1 {
+        @apply flex gap-2;
+    }
+
+    .sign {
+        @apply flex justify-evenly gap-1;
+    }
+
+    .cartusersign__sect1 {
+        @apply flex;
+
+    }
+
+    .cartusersign__sect2 {
+        font-size: $main-text-size;
+        
+    }
+}
+.cart-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;  
+    border: 1px solid black;
+
+}
+.user-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;  
+    border: 1px solid black;
+
+}
+
+.mainNav {
+    @apply flex gap-5 py-5 px-48;
+    font-size: $main-text-size;
+}
+
+.hero {
+    @apply py-20 px-48 flex gap-10;
+    background-color: $secondary-color;
+
+   div {
+    width: 1000px;
+    img {
+        width: 100%;
+    }
+   }
+}
+
+.navProduct {
+    @apply w-96;
+    border: 1px solid $primary-text-color;
+    border-radius: 5px;
+    color: $primary-text-color;
+    font-size: $main-text-size;
+
+    background-color: $primary-color;
+
+    &__items {
+        border-bottom: 1px solid $primary-text-color;
+        padding: 11px;
+    }
+
+    &__items:nth-child(4) {
+        border-bottom: none;
+    }
+}
+
+
+.see-all {
+    border: 1.5px solid $accent-color;
+    padding: 6px 12px;
+    border-radius: 3px;
+    color: $accent-color;
+}
+.popular {
+    @apply grid grid-cols-4 py-5 px-48 gap-5;
+}
+
+.productItem {
+    @apply h-full w-full py-3 px-9;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; 
+    border-radius: 5px;
+    margin: 10px;
+
+    &__img {
+        @apply px-5;
+        height: 200px;
+        width: 100%;
+    }
+}
+
+.footer {
+    background-color: $secondary-color;
+
+    &__sect1 {
+        @apply flex justify-between px-48;
+        padding-top: 90px;
+        padding-bottom: 40px;
+
+        div {
+            h1 {
+            font-size: $text-size;
+            font-weight: 600;
+
+            }
+        }
+    }
+
+    &__sect1--btns {
+        @apply h-12 flex gap-5;
+
+    }
+    .footer__sect1--btn1 {
+        @apply w-32;
+
+    }
+    .footer__sect1--btn2 {
+        @apply w-32;
+
+    }
+
+}
+
+.nav-footer {
+    @apply py-10 px-48 flex justify-between;
+
+    div {
+        h4 {
+            font-size: $text-size;
+        }
+        li {
+            margin: 10px 0;
+            color: $primary-text-color;
+        }
+    }
+
+}
+
+
+
+
