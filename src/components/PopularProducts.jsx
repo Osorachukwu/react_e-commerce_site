@@ -11,7 +11,7 @@ function PopularProducts() {
         let myUrl = "https://fakestoreapi.com/products";
         fetch(myUrl, {
           method: 'GET',
-          mode: 'cors'
+          mode: 'no-cors'
         })
           .then((res) => {
             if (!res.ok) {
