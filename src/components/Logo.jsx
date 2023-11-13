@@ -5,6 +5,7 @@ function Logo() {
   return (
     <Link to='/'>
     <div className='logo'>
+      {/* Refine the svg logos you have using remove bg */}
  
         {/* <img className='logo__image' src="Osora. (2).svg" alt="" /> */}
         <h1 style={{

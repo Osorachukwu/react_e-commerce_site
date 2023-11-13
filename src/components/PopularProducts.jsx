@@ -9,7 +9,10 @@ function PopularProducts() {
 
     useEffect(() => {
         let myUrl = "https://fakestoreapi.com/products";
-        fetch(myUrl)
+        fetch(myUrl, {
+          method: 'GET',
+          mode: 'cors'
+        })
           .then((res) => {
             if (!res.ok) {
               throw new Error('Failed to fetch products');
