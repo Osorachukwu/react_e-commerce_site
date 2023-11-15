@@ -1,5 +1,5 @@
 import React from 'react'
-import 'boxicons/css/boxicons.min.css';
+// import 'boxicons/css/boxicons.min.css';
 import { useState } from 'react';
 import Nav from './Nav';
 // import { Link } from 'react-router-dom';

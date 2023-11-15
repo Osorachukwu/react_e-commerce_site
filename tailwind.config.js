@@ -30,4 +30,4 @@ export default {
   },
   plugins: [],
 }
-git commit -m "Responsive -mobile"
+
