@@ -9,10 +9,7 @@ function PopularProducts() {
 
     useEffect(() => {
         let myUrl = "https://fakestoreapi.com/products";
-        fetch(myUrl, {
-          method: 'GET',
-          mode: 'no-cors'
-        })
+        fetch(myUrl)
           .then((res) => {
             if (!res.ok) {
               throw new Error('Failed to fetch products');
@@ -25,8 +22,9 @@ function PopularProducts() {
       }, []);
 
   return (
-    <div>
-      <div className='flex justify-between px-48' style={{fontSize: '1.3rem', paddingTop: '70px'}}>
+    <div className='popular-product'>
+
+      <div className='popular-product__sect1'>
        <p>Popular Products</p>
        <Button myBtnClass='see-all' text='See All'/>
 

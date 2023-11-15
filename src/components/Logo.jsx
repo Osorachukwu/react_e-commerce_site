@@ -8,13 +8,11 @@ function Logo() {
       {/* Refine the svg logos you have using remove bg */}
  
         {/* <img className='logo__image' src="Osora. (2).svg" alt="" /> */}
-        <h1 style={{
-          fontWeight: 'bolder',
-          fontSize: 'x-large',
-          fontStyle: 'italic',
-        }}>Osora</h1>
-        <p style={{fontSize: 'x-small'}}>..powered by fake-store API</p>
+        <h1 className='logo__h1'>Osora</h1>
 
+        <p className='logo__p'>
+          ..powered by fake-store API
+        </p>
        
     </div>
     </Link>
@@ -22,4 +20,3 @@ function Logo() {
 }
 
 export default Logo
-

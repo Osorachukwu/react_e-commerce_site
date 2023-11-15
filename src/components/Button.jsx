@@ -8,7 +8,6 @@ function Button({ myBtnClass, text, logo, alt }) {
          display: "flex",
          justifyContent: "center",
          alignItems: "center"
-        
         }}>
 
         {text}

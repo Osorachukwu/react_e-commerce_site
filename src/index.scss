@@ -2,214 +2,294 @@
 @tailwind components;
 @tailwind utilities;
 
- 
-// rgb(250,51,53)
-
-
-*, ::before, ::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-$primary-color: rgb(255,255,255);
-$secondary-color:rgb(238, 238, 239);
-$accent-color:rgb(194,24,91);
-$primary-text-color:rgb(133, 133, 133);
-$main-text-size: 1.2rem;
-$text-size: 1.5rem;
+//👇 Header 🚩
 
 .header {
-    @apply bg-white;
+  @apply bg-white;
 
-    &__sect1 {
-        @apply flex justify-between items-center
-        align-middle py-5 px-48;
-        
-    }
-    //it seems the div affects all the others divs downstream
-
+  &__sect1 {
+    @apply flex justify-between items-center
+        align-middle py-5 px-48
+        sm:px-10;
+  }
 }
 
+//👇 Logo 🚩
 
 .logo {
-    @apply h-10 items-center;
-    border: 3px solid white;
-    line-height: 18px;
+  @apply h-10 items-center;
 
-    .logo__image {
-        height: 100%;
-        background-color: rgb(249, 250, 251);
-        // using rgb value to set bg with tailwind didnt work
-    }
-    
-    h2 {
-        @apply text-black
-    }
-}
+  &__h1 {
+    @apply text-[35px] italic font-bold
+    sm:text-2xl 
+    sm:leading-3;
+    line-height: 30px;
+  } //☝ "Osora" text
 
+  &__p {
+    @apply text-xs ml-3
+    sm:ml-4;
+  }//☝ "powerd by..."
+
+  // .logo__image {
+  //     height: 100%;
+  //     background-color: rgb(249, 250, 251);
+  //     // using rgb value to set bg with tailwind didnt work
+  // }
+}// ☝ Logo
+
+
+//👇 Search 🚩
 
 .search {
-    @apply flex;
+  @apply 
+  flex
+  sm:hidden
+  ;
 
-    input {
-        @apply h-10 w-52 px-2;
-        outline: none;
-        border: 0.5px solid $accent-color;
-        border-radius: 2px;
-    }
+  //👇 Input 🚩
 
-    &__logo {
-        background-color:  $accent-color;
-        padding: 7px;
-        border: 1px solid $accent-color;
-    }
-}
+  input {
+    @apply h-10 w-52 
+        px-2
+        border-accentColor border-solid 
+        border-[0.5px];
+    outline: none;
+    border-radius: 2px;
+  } //☝ search-bar/input 
 
+  &__logo {
+    @apply bg-accentColor 
+        border-[1px] border-solid border-accentColor
+        p-[7px];
+  } //☝ search-bar logo(magnifying-glass)
+} //☝ search-bar
+
+
+//👇 Cart/ User / Sign-in 🚩
 
 .cartusersign {
-    @apply flex gap-5 h-12 items-center;
+  @apply flex gap-5 h-12 items-center
+  sm:hidden
+  ;
 
-    &__sect1 {
-        @apply flex gap-2;
-    }
+  &__sect1 {
+    @apply flex gap-2;
+  }
 
-    .sign {
-        @apply flex justify-evenly gap-1;
-    }
+  .sign {
+    @apply flex justify-evenly gap-1;
+  }
 
-    .cartusersign__sect1 {
-        @apply flex;
+  .cartusersign__sect1 {
+    @apply flex;
 
-    }
+  }
 
-    .cartusersign__sect2 {
-        font-size: $main-text-size;
-        
-    }
+  .cartusersign__sect2 {
+    @apply text-smallText;
+    // font-size: $main-text-size;
+  }
 }
-.cart-btn {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;  
-    border: 1px solid black;
 
+//👇 Cart/ User / Sign-in 🚩
+
+.cart-btn {
+  @apply h-10 w-10
+    border-[1px] border-solid border-black;
+  border-radius: 100%;
 }
 .user-btn {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;  
-    border: 1px solid black;
-
+  @apply h-10 w-10
+    border-[1px] border-solid border-black;
+  border-radius: 100%;
 }
 
 .mainNav {
-    @apply flex gap-5 py-5 px-48;
-    font-size: $main-text-size;
+  @apply flex gap-5 py-5 px-48 text-smallText
+  sm:hidden;
+
+  // font-size: $main-text-size;
 }
 
-.hero {
-    @apply py-20 px-48 flex gap-10;
-    background-color: $secondary-color;
+//👇 Hambourger 🚩
 
-   div {
-    width: 1000px;
+.hambourger {
+  &__btns {
+    @apply hidden mr-10 cursor-pointer sm:block;
+  }//☝ hambourger icons/btns
+
+  &__nav {
+    @apply absolute border-solid border-black border-[1px] border-solid border-mainTextColor
+    text-mainTextColor text-[16px] mr-9
+    ;
+    border-radius: 3px;
+  } //☝ hambourger nav
+
+  &__li {
+    @apply bg-secondaryColor;
+    border-bottom: 1px solid black;
+  } //☝ hambourger list-items
+} //☝ Hambourger-Menu
+
+//👇 Hero 🚩
+
+.hero {
+  @apply bg-secondaryColor 
+    py-20 px-48 
+    flex gap-10
+    justify-center
+    sm:px-10
+    sm:flex-col;
+  //  bg-purple-700
+
+  div {
+    // width: 1000px;
     img {
-        width: 100%;
-    }
-   }
+        @apply w-full
+        sm:w-96
+        sm:h-52
+        sm:w-full;
+    //   width: 100%;
+    }//☝ gif image 
+  }
 }
 
 .navProduct {
-    @apply w-96;
-    border: 1px solid $primary-text-color;
+  @apply w-96 bg-primarayColor
+    border-[1px] border-solid border-mainTextColor
+    text-mainTextColor text-smallText 
+    sm:w-full;
     border-radius: 5px;
-    color: $primary-text-color;
-    font-size: $main-text-size;
 
-    background-color: $primary-color;
+  &__items {
+    border-bottom: 1px solid rgb(133, 133, 133);
+    padding: 11px;
+  }
 
-    &__items {
-        border-bottom: 1px solid $primary-text-color;
-        padding: 11px;
+  &__items:nth-child(4) {
+    border-bottom: none;
+  }
+}
+
+.popular-product {
+    @apply px-48
+    sm:px-10
+    ;
+
+    &__sect1 {
+        @apply text-mediumText flex justify-between pt-16;
+
+        p {
+          @apply sm:text-[15px];
+          font-style: 15px;
+          margin-right: 5px;
+          letter-spacing: 0px;
+        }
     }
 
-    &__items:nth-child(4) {
-        border-bottom: none;
-    }
+    .see-all {
+         @apply border-[1.5px] border-solid border-accentColor rounded-[3px]
+         text-accentColor
+          py-[4px] px-[10px]
+          sm:text-[15px]
+          ;
+      }
+
+    .popular {
+        @apply grid grid-cols-4 py-5 gap-5;
+      }
+
 }
 
-
-.see-all {
-    border: 1.5px solid $accent-color;
-    padding: 6px 12px;
-    border-radius: 3px;
-    color: $accent-color;
-}
-.popular {
-    @apply grid grid-cols-4 py-5 px-48 gap-5;
-}
 
 .productItem {
-    @apply h-full w-full py-3 px-12;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; 
-    border-radius: 5px;
-    margin: 10px;
+  @apply h-full w-full 
+    py-3 px-12 m-[10px] rounded-[5px];
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  margin: 10px;
 
-    &__img {
-        @apply px-5;
-        height: 200px;
-        width: 100%;
-    }
+  &__img {
+    @apply px-5 h-[200px];
+    width: 100%;
+  }
 }
 
 .footer {
-    background-color: $secondary-color;
+  @apply bg-secondaryColor pb-20;
 
-    &__sect1 {
-        @apply flex justify-between px-48;
-        padding-top: 90px;
-        padding-bottom: 40px;
+  &__sect1 {
+    @apply flex justify-between px-48
+    sm:px-10
+    sm:flex-col;
+    padding-top: 90px;
+    padding-bottom: 40px;
 
-        div {
-            h1 {
-            font-size: $text-size;
-            font-weight: 600;
+    div {
+        @apply sm:mb-5 
+        sm:flex
+        sm:flex;
+      h1 {
+        @apply text-mediumText font-[600];
+      }
+      p {
+        @apply sm:pr-12;
+      }
+    }
+  } //☝ Get it on App Stores
 
-            }
+  &__sect1--btns {
+    @apply h-12 flex gap-5
+    sm:w-full
+    sm:flex
+    sm:justify-center;
+  } //☝ google & apple store btn container
+
+  .footer__sect1--btn1 {
+    @apply w-32;
+  } //☝ google-store btn
+
+  .footer__sect1--btn2 {
+    @apply w-32;
+  } //☝ apple-store btn
+
+
+  div {
+
+    h2 {
+      @apply text-smallText;
+
+        span {
+            @apply text-accentColor;
         }
     }
-
-    &__sect1--btns {
-        @apply h-12 flex gap-5;
-
-    }
-    .footer__sect1--btn1 {
-        @apply w-32;
-
-    }
-    .footer__sect1--btn2 {
-        @apply w-32;
-
-    }
-
+  }
+  // ☝ copy-right
 }
 
 .nav-footer {
-    @apply py-10 px-48 flex justify-between;
+  @apply py-10 px-48
+  grid grid-cols-4 justify-between
+  sm:px-10
+  sm:grid-cols-2;
 
-    div {
-        h4 {
-            font-size: $text-size;
-        }
-        li {
-            margin: 10px 0;
-            color: $primary-text-color;
-        }
-    }
+  div {
+    h4 {
+      @apply text-smallText;
+    } //☝ Brands Company Help Contact
+    
+    li {
+      @apply my-[10px] mx-0 text-mainTextColor;
+    } //☝ footer links
+  }
 
 }
-
-
-
-

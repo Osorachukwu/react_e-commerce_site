@@ -9,7 +9,10 @@ function Footer() {
       <div className='footer__sect1'>
         <div>
           <h1>Get it on the App stores</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+
+          <p>
+           Lorem ipsum, dolor sit amet consectetur   adipisicing elit..
+          </p>
         </div>
 
         <div className='footer__sect1--btns'>
@@ -29,7 +32,11 @@ function Footer() {
         display: 'flex', 
         justifyContent: 'center'
         }}>
-        <h2>jndwjincejnxed</h2>
+
+        <h2> &copy;
+          <span>Fake-store </span> 
+          All rights reserved 2023
+        </h2>
 
       </div>
 

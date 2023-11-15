@@ -16,7 +16,7 @@ function Header() {
       <hr />
 
       <div>
-        <Nav />
+        <Nav mainNavClass='mainNav'/>
       </div>
       
       
