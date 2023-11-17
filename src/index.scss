@@ -232,14 +232,15 @@
       }
 
     .popular {
-      @apply py-5 gap-5;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        @apply grid grid-cols-4 gap-5
+        sm:grid-cols-1
+        min-max:grid-cols-3
+      ;
+
+      //   @apply py-5 gap-5;
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       //This code ☝ gets me a fully responsive grid
-        // @apply grid grid-cols-4 py-5 gap-5
-        // sm:grid-cols-1
-        // min-max:grid-cols-3
-        // ;
         
       }
 
@@ -247,18 +248,18 @@
 
 
 .productItem {
-  @apply h-full w-full 
-    py-3 px-3 m-[10px] rounded-[5px];
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  @apply h-[350px] w-full 
+    px-9 pt-5 rounded-[5px]
+    min-max:px-1;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  margin: 10px;
 
   &__img {
-    @apply px-5 h-[300px]
+    @apply px-3
     min-max:px-1
     min-max:py-5;
     width: 100%;
-    object-fit: cover;
+    height: 60%;
   }
 }
 

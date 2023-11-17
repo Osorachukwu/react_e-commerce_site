@@ -8,7 +8,7 @@ function Item({ img, title, price }) {
       <div className="mt-5">
         <p>{title}</p>
         <p>{price}</p>
-        <Button text="click" bgColor="red" />
+        {/* <Button text="click" bgColor="red" /> */}
       </div>
     </div>
   );
