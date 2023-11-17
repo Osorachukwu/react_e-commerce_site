@@ -16,9 +16,11 @@
   @apply bg-white;
 
   &__sect1 {
-    @apply flex justify-between items-center
-        align-middle py-5 px-48
-        sm:px-10;
+    @apply flex justify-between items-center align-middle py-5 px-48
+    sm:px-10
+    md:px-10
+    lg:px-5
+   ;
   }
 }
 
@@ -53,6 +55,7 @@
   @apply 
   flex
   sm:hidden
+  min-max:hidden
   ;
 
   //👇 Input 🚩
@@ -79,6 +82,7 @@
 .cartusersign {
   @apply flex gap-5 h-12 items-center
   sm:hidden
+  min-max:hidden
   ;
 
   &__sect1 {
@@ -115,7 +119,10 @@
 
 .mainNav {
   @apply flex gap-5 py-5 px-48 text-smallText
-  sm:hidden;
+  sm:hidden
+  md:px-10
+  min-max:hidden
+  lg:px-5;
 
   // font-size: $main-text-size;
 }
@@ -123,20 +130,31 @@
 //👇 Hambourger 🚩
 
 .hambourger {
+  @apply mr-16;
   &__btns {
-    @apply hidden mr-10 cursor-pointer sm:block;
+    @apply hidden
+    cursor-pointer 
+    sm:block
+    min-max:block
+    ;
   }//☝ hambourger icons/btns
 
   &__nav {
-    @apply absolute border-solid border-black border-[1px] border-solid border-mainTextColor
-    text-mainTextColor text-[16px] mr-9
-    ;
+    @apply absolute  
+    text-mainTextColor text-[18px] mr-9
+    min-max:block
+    z-10;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    z-index: 100;
     border-radius: 3px;
   } //☝ hambourger nav
 
   &__li {
-    @apply bg-secondaryColor;
-    border-bottom: 1px solid black;
+    @apply bg-secondaryColor
+    py-1 pl-1;
+    letter-spacing: 1px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+    // border-bottom: 1px solid rgb(226, 223, 223);
   } //☝ hambourger list-items
 } //☝ Hambourger-Menu
 
@@ -144,32 +162,39 @@
 
 .hero {
   @apply bg-secondaryColor 
-    py-20 px-48 
+    py-20 px-48
     flex gap-10
-    justify-center
     sm:px-10
-    sm:flex-col;
+    sm:flex-col
+    min-max:flex-col
+    min-max:w-full
+    min-max:px-20
+    min-max:bg-orange-500;
   //  bg-purple-700
 
   div {
     // width: 1000px;
     img {
-        @apply w-full
-        sm:w-96
+        @apply w-full 
+        sm:w-full 
         sm:h-52
-        sm:w-full;
+        ;
     //   width: 100%;
-    }//☝ gif image 
+    }//☝ gif image   
+        
+        
   }
 }
 
 .navProduct {
   @apply w-96 bg-primarayColor
     border-[1px] border-solid border-mainTextColor
-    text-mainTextColor text-smallText 
-    sm:w-full;
+    text-mainTextColor text-smallText flex flex-col
+    sm:w-full
+    min-max:w-full
+    ;
     border-radius: 5px;
-
+  
   &__items {
     border-bottom: 1px solid rgb(133, 133, 133);
     padding: 11px;
@@ -183,7 +208,9 @@
 .popular-product {
     @apply px-48
     sm:px-10
-    ;
+    md:px-10
+    lg:px-20;
+    //☝popular-product-text
 
     &__sect1 {
         @apply text-mediumText flex justify-between pt-16;
@@ -205,8 +232,16 @@
       }
 
     .popular {
-        @apply grid grid-cols-4 py-5 gap-5;
+        @apply grid grid-cols-4 py-5 gap-5
+        sm:grid-cols-1
+        md:grid-cols-3;
+        
+
       }
+      // @apply grid py-5 gap-5;
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      //This code ☝ gets me a fully responsive grid
 
 }
 
@@ -230,7 +265,8 @@
   &__sect1 {
     @apply flex justify-between px-48
     sm:px-10
-    sm:flex-col;
+    sm:flex-col
+    md:px-10;
     padding-top: 90px;
     padding-bottom: 40px;
 
@@ -238,11 +274,15 @@
         @apply sm:mb-5 
         sm:flex
         sm:flex;
+
       h1 {
         @apply text-mediumText font-[600];
       }
       p {
-        @apply sm:pr-12;
+        @apply sm:pr-12
+        sm:hidden
+        xsm:hidden
+        xsm:align-middle;
       }
     }
   } //☝ Get it on App Stores
@@ -266,7 +306,9 @@
   div {
 
     h2 {
-      @apply text-smallText;
+      @apply text-smallText
+      sm:text-[15px]
+      ;
 
         span {
             @apply text-accentColor;
@@ -280,7 +322,8 @@
   @apply py-10 px-48
   grid grid-cols-4 justify-between
   sm:px-10
-  sm:grid-cols-2;
+  sm:grid-cols-2
+  md:px-10;
 
   div {
     h4 {

@@ -6,13 +6,15 @@ import Signup from './pages/Signup'
 import Button from './Button'
 import { Link } from 'react-router-dom'
 import Hambourger from './Hambourger'
+import cartIcon from '../assets/cart.svg'
+import userIcon from '../assets/user.svg'
+
 
 
 function Cartusersign() {
   return (
-    <div>
-
-     <Hambourger />
+    <div className=''>
+        <Hambourger />
         
       <div className='cartusersign'>
         
@@ -20,14 +22,14 @@ function Cartusersign() {
          <Link to='cart'>
             <Button 
               myBtnClass='cart-btn'
-              logo="cart.svg"
+              logo={cartIcon}
               />
          </Link>
 
          <Link to='user'>
             <Button 
               myBtnClass='user-btn'
-              logo="user.svg"
+              logo={userIcon}
             />
          </Link>
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import mirror from '../assets/search.svg'
 
 function Searchbar() {
   return (
@@ -7,7 +8,7 @@ function Searchbar() {
         <input type="text" placeholder='Search...'/>
 
         <div className='search__logo'>
-         <img src="search.svg" alt="search-icon" />
+         <img src={mirror} alt="search-icon" />
         </div>
 
     </div>

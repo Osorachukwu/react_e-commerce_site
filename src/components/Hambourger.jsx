@@ -1,12 +1,11 @@
 import React from 'react'
-// import 'boxicons/css/boxicons.min.css';
 import { useState } from 'react';
 import Nav from './Nav';
+import menuIcon from '../assets/menu.svg'
 // import { Link } from 'react-router-dom';
 
 function Hambourger() {
     const [isOpen, setIsOpen] =useState(false);
-
     function toggle() {
         setIsOpen(!isOpen)
     }
@@ -14,8 +13,11 @@ function Hambourger() {
   return (
     <div className='hambourger'>
         <div className='hambourger__btns' onClick={toggle}>
-          { !isOpen && <div className='w-10'>🍔</div>}
-          { isOpen && <div className='w-10'>❌</div> }
+          { !isOpen && 
+           <div><img src={menuIcon} alt="" /> </div> 
+          }
+         
+          { isOpen && <div>❌</div> }
         </div>
 
         {/*Icons are replacable using these👇 box-icons!!!
@@ -24,7 +26,7 @@ function Hambourger() {
         */}
 
         {isOpen && 
-        <div className='sm:block hidden'>
+        <div className='md:block hidden'>
             <Nav mainNavClass='hambourger__nav' mainNavLi='hambourger__li'/>
         </div>
         }

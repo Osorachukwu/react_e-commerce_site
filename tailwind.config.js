@@ -19,11 +19,13 @@ export default {
       },
       //My customized Responsive break-points
       screens: {
-        sm: {max: "650px"},
-        md: {max: "950px"},
-        lg: {max: "1220px"},
-        xl: {max: "1440px"},
-        "2xl": {max: "1680px"}
+        xsm: {max: "400px"},
+        sm: {max: "650px"},//mobile
+        md: {max: "950px"}, //tablet
+        'min-max': {min: "650px", max: "950px"},
+        lg: {max: "1220px"}, //smDesktop
+        xl: {max: "1500px"},
+        "2xl": {max: "1980px"}
 
       }
     },

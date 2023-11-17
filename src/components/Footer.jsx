@@ -2,6 +2,8 @@ import React from 'react'
 import Button from './Button'
 import { Link } from 'react-router-dom'
 import NavFooter from './NavFooter'
+import googleBtn from '../assets/google-btn.avif'
+import appleBtn from '../assets/apple-btn.png'
 
 function Footer() {
   return (
@@ -17,10 +19,10 @@ function Footer() {
 
         <div className='footer__sect1--btns'>
           <Button
-          myBtnClass='footer__sect1--btn1' logo='get-it-on-google.avif'/>
+          myBtnClass='footer__sect1--btn1' logo={googleBtn}/>
 
           <Button
-          myBtnClass='footer__sect1--btn2' logo='get-it-on-apple.png'/>
+          myBtnClass='footer__sect1--btn2' logo={appleBtn}/>
         </div>
       </div>
 

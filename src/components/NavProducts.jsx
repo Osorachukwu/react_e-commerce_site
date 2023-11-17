@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function NavProducts() {
   return (
-   <nav >
+   <nav>
      <ul className='navProduct'>
         <li className='navProduct__items'>
             <Link to="electronics">Electronics</Link>
