@@ -232,30 +232,33 @@
       }
 
     .popular {
-        @apply grid grid-cols-4 py-5 gap-5
-        sm:grid-cols-1
-        md:grid-cols-3;
-        
-
-      }
-      // @apply grid py-5 gap-5;
-      // display: grid;
-      // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      @apply py-5 gap-5;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       //This code ☝ gets me a fully responsive grid
+        // @apply grid grid-cols-4 py-5 gap-5
+        // sm:grid-cols-1
+        // min-max:grid-cols-3
+        // ;
+        
+      }
 
 }
 
 
 .productItem {
   @apply h-full w-full 
-    py-3 px-12 m-[10px] rounded-[5px];
+    py-3 px-3 m-[10px] rounded-[5px];
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   margin: 10px;
 
   &__img {
-    @apply px-5 h-[200px];
+    @apply px-5 h-[300px]
+    min-max:px-1
+    min-max:py-5;
     width: 100%;
+    object-fit: cover;
   }
 }
 
